@@ -19,12 +19,11 @@ const defaultFormFields = {
 
 const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
+  const { displayName, email, password, confirmPassword } = formFields;
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
-
-  const { displayName, email, password, confirmPassword } = formFields;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -86,6 +85,7 @@ const SignUpForm = () => {
         <FormInput
           label='Password'
           required
+          type='password'
           onChange={handleChange}
           name='password'
           value={password}
